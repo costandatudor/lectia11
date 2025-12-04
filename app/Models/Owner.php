@@ -9,7 +9,7 @@ class Owner extends Model
     protected $table = 'owners';
     protected $fillable = ['id', 'name', 'car_id'];
 
-    public function car()
+    public function car(): BelongsTo
     {
         return $this->belongsTo(Car::class);
     }
