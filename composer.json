@@ -2,7 +2,7 @@
     "name": "php/lectia11.2",
     "version": "0.0.0",
     "scripts": {
-        "dev" : "php -S localhost:8888 -t public public/index.php"
+        "dev" : "php -S localhost:8888 -t public "
     },
     "require": {
         "slim/slim": "4.*",

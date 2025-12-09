@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Mecanici</title>
+    <title>Lista Proprietari</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/app.css">
@@ -18,8 +18,8 @@
     <section class="py-5">
         <div class="container-lg">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h2 class="mb-0">Lista Mecanici din sistem</h2>
-                <a href="/mechanics/create" class="btn btn-success">Adaugă Mecanic</a>
+                <h2 class="mb-0">Lista Proprietari din sistem</h2>
+                <a href="/owners/create" class="btn btn-success">Adaugă Proprietar</a>
             </div>
             <table class="table table-bordered">
                 <thead>
@@ -32,23 +32,23 @@
                 </thead>
                 <tbody>
                     <?php $nr=1; ?>
-                    <?php foreach ($mechanics as $mechanic): ?>
+                    <?php foreach ($owners as $owner): ?>
                     <tr>
                         <td><?= $nr++; ?></td>
-                        <td><?= $mechanic->name ?></td>
+                        <td><?= $owner->name ?></td>
                         <td>
-                            <?php foreach($mechanic->cars()->get() as $car): ?>
+                            <?php foreach($owner->car()->get() as $car): ?>
                                 <div>
                                     <div><?= $car->model ?></div>
                                 </div>
                             <?php endforeach; ?>
                         </td>
                         <td>
-                            <a href="/mechanics/<?= $mechanic->id ?>/edit" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="/mechanics/<?= $mechanic->id ?>/delete" method="post" style="display:inline" onsubmit="return confirm('Ștergeți acest mecanic?');">
+                            <a href="/owners/<?= $owner->id ?>/edit" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="/owners/<?= $owner->id ?>/delete" method="post" style="display:inline" onsubmit="return confirm('Ștergeți acest proprietar?');">
                                 <button class="btn btn-danger btn-sm">Delete</button>
                             </form>
-                            <a href="/mechanics/<?= $mechanic->id ?>" class="btn btn-info btn-sm">Info</a>
+                            <a href="/owners/<?= $owner->id ?>" class="btn btn-info btn-sm">Info</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
