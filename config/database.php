@@ -6,7 +6,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
     'driver' => 'mysql',
     'host' => 'localhost',
-    'database' => 'lectia11.2',
+    'database' => 'lectia11',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
